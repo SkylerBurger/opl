@@ -34,6 +34,12 @@ seed_instant_outcomes_details = [
         "sanity",
         -10,
     ),
+    (
+        "Glimpse of Light",
+        "You a visited by a being of pure light. They flash out of existence as quickly as they had appeared. Gain 10 sanity",
+        "sanity",
+        10,
+    ),
 ]
 
 seed_roll_events = [
@@ -73,7 +79,8 @@ def get_seed_rooms():
     rooms = list()
 
     for name, description in seed_rooms_details:
-        this_mechanic = mechanics[randint(0, len(mechanics) - 1)]
+        random_index = randint(0, len(mechanics) - 1)
+        this_mechanic = mechanics.pop(random_index)
         rooms.append(Room(name, description, this_mechanic))
 
     return rooms
