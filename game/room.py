@@ -15,3 +15,4 @@ class Room:
 
     def play(self, player):
         self.mechanic.play(player)
+        player.report_stats()
